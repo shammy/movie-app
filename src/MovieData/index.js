@@ -1,8 +1,11 @@
-import React from "react";
-import "./index.css";
+import React, { useContext } from 'react';
+import { MovieContext } from '../Contexts';
+import MetaData from './MetaData';
+import './index.css';
 
 function MovieData() {
-  return <div>MovieData goes here</div>;
+  const value = useContext(MovieContext);
+  return value ? <MetaData /> : <h2>Please Select a Movie</h2>;
 }
 
 export default MovieData;
